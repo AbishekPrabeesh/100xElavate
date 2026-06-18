@@ -1,0 +1,123 @@
+/* Reset basic spacing */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Your Dark Theme Background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+/* Yellow centered title */
+h1 {
+    color: yellow;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+/* Container for the input and Add button */
+body > div:first-of-type {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 450px;
+}
+
+/* Black input with white border and wheat text */
+input[type="text"] {
+    flex: 1;
+    padding: 12px 15px;
+    background-color: black;
+    border: 1px solid white;
+    color: wheat;
+    border-radius: 8px;
+    font-size: 16px;
+    outline: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input[type="text"]::placeholder {
+    color: rgba(245, 222, 179, 0.5); /* Faded wheat color for placeholder */
+}
+
+input[type="text"]:focus {
+    border-color: yellow;
+    box-shadow: 0 0 8px rgba(255, 255, 0, 0.4);
+}
+
+/* General clean button styles */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: filter 0.2s, transform 0.1s;
+}
+
+button:hover {
+    filter: brightness(1.2); /* Brightens the exact color you chose on hover */
+}
+
+button:active {
+    transform: scale(0.96); /* Small click effect */
+}
+
+/* Green Add Button */
+#b1 {
+    background-color: green;
+}
+
+/* Styling for the dynamically added Todo items */
+body > div[id] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #111; /* Slightly lighter than black to stand out */
+    border: 1px solid #333;
+    padding: 15px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    transition: transform 0.2s, border-color 0.2s;
+}
+
+body > div[id]:hover {
+    transform: translateY(-2px);
+    border-color: #555;
+}
+
+/* The actual task text */
+body > div[id] > div {
+    font-size: 18px;
+    word-break: break-word;
+    margin-right: 15px;
+}
+
+/* Styling for Delete and Complete buttons inside tasks */
+body > div[id] button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: red; /* Default to red for Delete */
+}
+
+/* Explicitly target the Complete button to keep it blue */
+body > div[id] button[id^="btn-complete"] {
+    background-color: #3498db; 
+}
